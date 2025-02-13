@@ -13,7 +13,7 @@ import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.web.context.request.WebRequest;
 
 @RestController
-@RequestMapping("api/verify")
+@RequestMapping("api/evaluate")
 public class FraudDetectionController {
 
     private final FraudDetectionService fraudDetectionService;
@@ -38,7 +38,7 @@ public class FraudDetectionController {
 
 
     @PostMapping("")
-    public FraudDetectionResponse verify(@RequestBody PaymentTransaction paymentTransaction) {
+    public FraudDetectionResponse evaluate(@RequestBody PaymentTransaction paymentTransaction) {
         FraudDetectionResponse response = fraudDetectionService.verify(paymentTransaction);
 
         if(response.fraudScore() > 0) {
