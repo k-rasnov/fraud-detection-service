@@ -24,7 +24,7 @@ public class FraudDetectionService {
         Optional<Terminal> terminal = terminalRepository.get(paymentTransaction.terminal().id());
 
         if(terminal.isEmpty()) {
-            throw new UnknownTerminalException();
+            throw new IllegalArgumentException("Terminal with id " + paymentTransaction.terminal().id() + " not found");
         }
 
         int fraudScore = terminalRulesGroup.stream()

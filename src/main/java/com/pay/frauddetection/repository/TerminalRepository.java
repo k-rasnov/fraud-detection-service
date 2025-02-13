@@ -9,6 +9,12 @@ import java.util.Optional;
 public class TerminalRepository {
 
     public Optional<Terminal> get(int id) {
-        return Optional.of(new Terminal(id, 5));
+
+        // mocked response to test various cases
+        if(id == 1) {
+            return Optional.of(new Terminal(id, 5));
+        } else {
+            return Optional.empty();
+        }
     }
 }
