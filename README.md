@@ -2,7 +2,7 @@
 Basic Spring Boot service
 
 ## 📖 Overview
-This service provides a REST API process payment transactions and to detect possible fraud.
+This service provides a REST API to process payment transactions and to detect possible fraud.
 
 ---
 
@@ -17,7 +17,7 @@ Technologies Used
 
 ## 🚀 Endpoints
 ### **1️⃣ Transaction Evaluation**
-**Endpoint:** `POST /api/verify`
+**Endpoint:** `POST /api/evaluate`
 - **Description:** Evaluates if a transaction violates fraud detection rules.
 - **Request Body:**
   ```json
